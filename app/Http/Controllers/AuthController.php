@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use \Illuminate\Foundation\Validation\ValidatesRequests;
 
 class AuthController extends Controller
 {
-    // Muda a rota pra AuthController@index ao invés de dashboard pra seguir o padrão REST (index, show, update, create, delete...)
     public function index()
     {
         if (Auth::check()) {
-            return view('admin.dashboard');
+            return view('admin.index');
         }
 
         return redirect()->route('admin.login');
@@ -19,7 +19,7 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view('admin.login');
+        return view('admin.login.index');
     }
 
     public function login(Request $request)
@@ -36,7 +36,7 @@ class AuthController extends Controller
 
         return redirect()
                         ->back()
-                        ->withInput()
+                        ->withInput($request->input())
                         ->withErrors(['Os dados informados não conferem']);
     }
 

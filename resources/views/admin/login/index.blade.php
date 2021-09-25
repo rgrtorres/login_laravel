@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
@@ -19,16 +19,20 @@
 
         <form action="{{route('admin.login.do')}}" method="POST">
             @csrf
-            <label for="email">Endereço de e-mail</label>
-            <input type="text" name="email" class="form-control">
 
+            <div class="form-group">
+                <label for="user">Usuário</label>
+                <input type="text" name="email" class="form-control">
+            </div>
 
-            <label for="password">Sua senha</label>
-            <input type="password" name="password" class="form-control">
+            <div class="form-group">
+                <label for="password">Sua senha</label>
+                <input type="password" name="password" class="form-control">
+            </div>
 
-            <hr>
-
-            <button type="submit" class="btn btn-primary">Logar</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Logar</button>
+            </div>
         </form>
     </div>
 </body>

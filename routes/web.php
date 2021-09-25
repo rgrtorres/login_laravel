@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TarefasController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/admin', [AuthController::class, 'index'])->name('admin');
+Route::get('/admin/adicionar', [TarefasController::class, 'adicionar'])->name('admin.adicionar');
+
+/* Login && Logout */
 Route::get('/admin/login', [AuthController::class, 'showLoginForm'])->name('admin.login');
 Route::get('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 Route::post('/admin/login/do', [AuthController::class, 'login'])->name('admin.login.do');
