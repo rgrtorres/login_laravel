@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomersTable extends Migration
+class CreateNumberReferenceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateCustomersTable extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('number_reference', function (Blueprint $table) {
             $table->id()->unique();
-            $table->unsignedBigInteger('user_id')
-                   ->foreign('user_id')
-                   ->references('id')
-                   ->on('users');
-
+            $table->integer('number_id')
+                  ->foreign('number_id')
+                  ->references('id')
+                  ->on('numbers');
             $table->string('name');
-            $table->integer('document');
-            $table->enum('status', ['new', 'active', 'suspended', 'cancelled'])
-                  ->default('new');
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -35,6 +32,6 @@ class CreateCustomersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('number_reference');
     }
 }

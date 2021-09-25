@@ -37,6 +37,7 @@
             <ul class="list-group">
                 <li class="list-group-item list-group-item-info">Navegação</li>
                 <li class="list-group-item"><a href="{{ route('admin') }}">Inicio</a></li>
+                <li class="list-group-item"><a href="{{ route('admin.usuarios') }}">Usuários</a></li>
                 <li class="list-group-item"><a href="{{ route('admin.logout') }}">Sair</a></li>
             </ul>
         </menu>
