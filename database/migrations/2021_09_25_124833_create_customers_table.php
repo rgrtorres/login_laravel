@@ -21,7 +21,7 @@ class CreateCustomersTable extends Migration
                    ->on('users');
 
             $table->string('name');
-            $table->integer('document');
+            $table->string('document');
             $table->enum('status', ['new', 'active', 'suspended', 'cancelled'])
                   ->default('new');
             $table->timestamps();

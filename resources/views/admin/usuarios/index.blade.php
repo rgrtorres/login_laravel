@@ -2,7 +2,7 @@
 
 @section('conteudo')
     @if (!empty($mensagem))
-    <div class="btn btn-success">{{$mensagem}}</div>
+    <div class="alert alert-success">{{$mensagem}}</div>
     @endif
     <h3>Usuários</h3>
     <a href="{{route('admin.usuarios.adicionar')}}" class="btn btn-primary">Criar Usuário</a>
@@ -22,7 +22,7 @@
                 <td>{{$usuario->email}}</td>
                 <td>
                     <a href="/admin/usuarios/editar/{{$usuario->id}}" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="/admin/usuarios/deletar/{{$usuario->id}}" class="btn btn-danger btn-sm" onclick="if(confirm('Você deseja deletar?'))">Apagar</a>
+                    <a href="/admin/usuarios/deletar/{{$usuario->id}}" class="btn btn-danger btn-sm">Apagar</a>
                 </td>
             </tr>
             @endforeach

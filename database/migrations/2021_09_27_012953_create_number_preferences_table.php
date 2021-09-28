@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNumberReferenceTable extends Migration
+class CreateNumberPreferencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateNumberReferenceTable extends Migration
      */
     public function up()
     {
-        Schema::create('number_reference', function (Blueprint $table) {
+        Schema::create('number_preferences', function (Blueprint $table) {
             $table->id()->unique();
             $table->integer('number_id')
                   ->foreign('number_id')
@@ -32,6 +32,6 @@ class CreateNumberReferenceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('number_reference');
+        Schema::dropIfExists('number_preferences');
     }
 }

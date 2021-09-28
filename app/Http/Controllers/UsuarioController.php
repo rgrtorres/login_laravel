@@ -8,6 +8,7 @@ use App\Usuarios;
 use App\Services\Deletar;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class UsuarioController extends Controller
 {
@@ -27,6 +28,12 @@ class UsuarioController extends Controller
     }
 
     protected function store(Request $request) {
+        Validator::make($request->all(), [
+            'name'      => 'required',
+            'email'     => 'required',
+            'password'  => 'required'
+        ])->validate();
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -42,7 +49,7 @@ class UsuarioController extends Controller
         return view('admin.usuarios.editar', compact('usuario'));
     }
 
-    public function editar_store(Request $request) {
+    public function edit (Request $request) {
         $usuario = Usuarios::find($request->id);
         $usuario->name = $request->name;
         $usuario->email = $request->email;

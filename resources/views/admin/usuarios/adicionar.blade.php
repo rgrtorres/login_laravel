@@ -2,6 +2,11 @@
 
 @section('conteudo')
     <h3>Adicionar Usuário</h3>
+    @if($errors->all())
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">{{$error}}</div>
+        @endforeach
+    @endif
     <form action="{{route('admin.usuarios.adicionar.do')}}" method="POST">
         @csrf
         <div class="form-group">

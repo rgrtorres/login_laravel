@@ -1,13 +1,13 @@
 @extends('admin.index');
 
 @section('conteudo')
-<h3>Adicionar Cliente</h3>
 @if($errors->all())
     @foreach ($errors->all() as $error)
-        <div class="alert alert-danger">{{$error}}</div>
+        <div><div class="alert alert-danger">{{$error}}</div></div>
     @endforeach
 @endif
-<form action="{{route('admin.adicionar.do')}}" method="POST">
+<h3>Adicionar Número</h3>
+<form action="{{route('admin.numeros.do')}}" method="POST">
     @csrf
 
     <div class="form-group">
@@ -16,13 +16,13 @@
     </div>
 
     <div class="form-group">
-        <label for="nome">Cliente</label>
-        <input type="text" name="name" class="form-control" required>
+        <label for="nome">Número de identificação do cliente</label>
+        <input type="text" name="customer_id" class="form-control" required>
     </div>
 
     <div class="form-group">
-        <label for="nome">CNPJ</label>
-        <input type="text" name="document" class="form-control" required>
+        <label for="nome">Número</label>
+        <input type="text" name="number" class="form-control" required>
     </div>
 
     <div class="form-group">
