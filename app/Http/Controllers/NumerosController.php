@@ -16,7 +16,7 @@ class NumerosController extends Controller
     }
 
     function index(Request $request) {
-        $numeros = Numbers::query()->get();
+        $numeros = Numbers::join('customers', 'customers.id', '=', 'numbers.customer_id')->get();
         $mensagem = $request->session()->get('mensagem');
 
         return view("admin.numeros.index", compact('numeros', 'mensagem'));
@@ -80,13 +80,12 @@ class NumerosController extends Controller
 
     public function update(Request $request, int $id) {
         $numero = Numbers::find($request->id);
-        $numero->customer_id = $request->customer_id;
+        $numero->customer_id = $request->id;
         $numero->number = $request->number;
         $numero->status = $request->status;
         $numero->save();
 
         Validator::make($request->all(), [
-            'customer_id'      => 'required',
             'number'           => 'required|max:14|min:8',
             'status'           => 'required'
         ])->validate();

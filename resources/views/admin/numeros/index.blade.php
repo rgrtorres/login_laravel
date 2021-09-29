@@ -21,7 +21,7 @@
         @foreach ($numeros as $numero)
         <tr>
             <th scope="row">{{$numero->id}}</th>
-            <td>{{$numero->customer_id}}</td>
+            <td>{{$numero->name}}</td>
             <td>{{$numero->number}}</td>
             <td>{{$numero->status}}</td>
             <td>

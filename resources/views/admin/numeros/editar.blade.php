@@ -2,13 +2,8 @@
 
 @section('conteudo')
 <h3>Editar número</h3>
-<form action="/admin/clientes/editar/{{$numero->id}}/do" method="POST">
+<form action="/admin/numeros/editar/{{$numero->id}}/do" method="POST">
     @csrf
-    <div class="form-group">
-        <label for="name">Cliente</label>
-        <input type="text" name="customer_id" class="form-control" value="{{$numero->customer_id}}">
-    </div>
-
     <div class="form-group">
         <label for="document">Número</label>
         <input type="text" name="number" class="form-control" value="{{$numero->number}}">

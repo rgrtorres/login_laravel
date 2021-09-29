@@ -10,7 +10,7 @@
     <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Cliente</th>
+            <th scope="col">ID do Cliente</th>
             <th scope="col">Prefêrencia</th>
             <th scope="col">Valor</th>
             <th scope="col">Ação</th>
