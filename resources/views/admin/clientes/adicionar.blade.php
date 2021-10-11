@@ -9,7 +9,6 @@
 @endif
 <form action="{{route('admin.adicionar.do')}}" method="POST">
     @csrf
-
     <div class="form-group">
         <label for="nome">Usuário</label>
         <input type="text" class="form-control" value="{{Auth::User()->name}}" disabled>

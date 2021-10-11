@@ -40,8 +40,6 @@
             <ul class="list-group">
                 <li class="list-group-item list-group-item-info">Navegação</li>
                 <li class="list-group-item"><a href="{{ route('admin.clientes') }}">Clientes</a></li>
-                <li class="list-group-item"><a href="{{ route('admin.numeros') }}">Números</a></li>
-                <li class="list-group-item"><a href="{{ route('admin.preferencias') }}">Preferencias</a></li>
                 <li class="list-group-item"><a href="{{ route('admin.usuarios') }}">Usuários</a></li>
                 <li class="list-group-item"><a href="{{ route('admin.logout') }}">Sair</a></li>
             </ul>

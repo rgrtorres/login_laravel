@@ -19,13 +19,17 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
+        if (Auth::check()) {
+            return redirect()->route('admin.clientes');
+        }
+
         return view('admin.login.index');
     }
 
     public function login(Request $request)
     {
         $credenciais = [
-            'email' => $request->email,
+            'name' => $request->name,
             'password' => $request->password
         ];
 

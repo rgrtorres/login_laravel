@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Senha</label>
+            <label for="name">Repetir Senha</label>
             <input type="password" name="password_confirmation" class="form-control">
         </div>
 
